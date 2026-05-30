@@ -64,7 +64,9 @@ pub fn DailySpecials() -> Element {
                         div { class: "bg-stone-700/40 backdrop-blur-sm rounded-2xl p-6 border border-stone-600/30 hover:border-amber-600/40 transition-all duration-300 hover:bg-stone-700/60",
                             // Emoji & name
                             div { class: "flex items-start gap-3 mb-3",
-                                span { class: "text-3xl shrink-0", "{special.emoji}" }
+                                span { class: "text-3xl shrink-0",
+                                    img { src: special.emoji, alt: special.name }
+                                }
                                 div {
                                     h3 {
                                         class: "text-lg font-semibold text-amber-100",
