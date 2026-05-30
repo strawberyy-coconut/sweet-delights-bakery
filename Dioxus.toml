@@ -5,6 +5,9 @@
 # HTML title tag content
 title = "Sweet Delights Bakery"
 
+# Base path for deployment under a subdirectory (e.g., GitHub Pages project site)
+base_path = "/sweet-delights-bakery"
+
 # include `assets` in web platform
 [web.resource]
 
