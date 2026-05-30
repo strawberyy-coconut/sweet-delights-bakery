@@ -6,7 +6,7 @@ pub struct DailySpecial {
     pub name: &'static str,
     pub description: &'static str,
     pub price: &'static str,
-    pub emoji: Asset``,
+    pub emoji: Asset
 }
 
 const DAILY_SPECIALS: &[DailySpecial] = &[
@@ -14,19 +14,19 @@ const DAILY_SPECIALS: &[DailySpecial] = &[
         name: "Lemon Lavender Scone",
         description: "Buttery scone infused with lemon zest and dried lavender, drizzled with honey glaze.",
         price: "$5.25",
-        emoji: asset!("/assets/emojis/lemon-emoji-unicode.png"),
+        emoji: asset!("/assets/images/lemon-emoji-unicode.png"),
     },
     DailySpecial {
         name: "Strawberry Rhubarb Danish",
         description: "Flaky Danish pastry filled with sweet-tart strawberry rhubarb compote and vanilla cream.",
         price: "$5.75",
-        emoji: asset!("/assets/emojis/strawberry-emoji-unicode.png"),
+        emoji: asset!("/assets/images/strawberry-emoji-unicode.png"),
     },
     DailySpecial {
         name: "Honey Oat Milk Latte",
         description: "Smooth espresso with steamed oat milk, a touch of local honey, and a dusting of cinnamon.",
         price: "$4.95",
-        emoji: asset!("/assets/emojis/hot-beverage-emoji-unicode.png"),
+        emoji: asset!("/assets/images/hot-beverage-emoji-unicode.png"),
     },
 ];
 
