@@ -32,8 +32,8 @@ enum Route {
             #[layout(BlogLayout)]
                 #[route("/")]
                 Blog {},
-                #[route("/:id")]
-                Post { id: i32 },
+                #[route("/:slug")]
+                Post { slug: String },
 }
 
 // We can import assets in dioxus with the `asset!` macro. This macro takes a path to an asset relative to the crate root.

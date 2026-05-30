@@ -8,16 +8,18 @@ pub fn Blog() -> Element {
         // Blog post grid
         div { class: "max-w-7xl mx-auto px-4 py-16",
             div { class: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8",
-                for (i , (title , excerpt , author , date , image_url)) in super::BLOG_POSTS.iter().enumerate() {
+                for post in super::BLOG_POSTS.iter() {
                     Link {
-                        to: Route::Post { id: (i + 1) as i32 },
+                        to: Route::Post {
+                            slug: post.slug.to_string(),
+                        },
                         class: "group card bg-base-100 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 overflow-hidden border border-stone-200/40 rounded-2xl",
                         "data-theme": "bakery",
 
                         figure { class: "relative h-52 overflow-hidden",
                             img {
-                                src: "{image_url}",
-                                alt: "{title}",
+                                src: "{post.image}",
+                                alt: "{post.title}",
                                 class: "w-full h-full object-cover group-hover:scale-105 transition-transform duration-500",
                                 loading: "lazy",
                             }
@@ -28,22 +30,22 @@ pub fn Blog() -> Element {
                             div { class: "flex items-center gap-4 text-xs text-stone-500 mb-3",
                                 span { class: "flex items-center gap-1",
                                     Calendar { class: "w-3.5 h-3.5" }
-                                    "{date}"
+                                    "{post.date}"
                                 }
                                 span { class: "flex items-center gap-1",
                                     User { class: "w-3.5 h-3.5" }
-                                    "{author}"
+                                    "{post.author}"
                                 }
                             }
 
                             h3 {
                                 class: "text-xl font-bold text-stone-700 group-hover:text-honey-700 transition-colors leading-snug mb-2",
                                 style: "font-family: 'Playfair Display', serif;",
-                                "{title}"
+                                "{post.title}"
                             }
 
                             p { class: "text-stone-600 text-sm leading-relaxed line-clamp-2 mb-4",
-                                "{excerpt}"
+                                "{post.excerpt}"
                             }
 
                             span {
