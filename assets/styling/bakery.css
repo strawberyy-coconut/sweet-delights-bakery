@@ -1,0 +1,156 @@
+/* ───────────────────────────────────────────────
+   Bakery Website — Custom Warm Animations & Styles
+   ─────────────────────────────────────────────── */
+
+/* ── Typography ── */
+:root {
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Nunito', sans-serif;
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+}
+
+h1, h2, h3, .font-heading {
+    font-family: 'Playfair Display', serif;
+}
+
+/* ── Global Warmth ── */
+:root {
+    background-color: #f5e6d3;
+    --data-theme: bakery;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* ── Button refinements ── */
+[data-theme="bakery"] .btn {
+    box-shadow: none !important;
+    font-weight: 600;
+    transition: all 0.25s ease;
+}
+
+/* ── Active nav link ── */
+nav a[aria-current="page"],
+.navbar a[aria-current="page"] {
+    font-weight: 700;
+    color: #fbbf24 !important;
+    position: relative;
+}
+
+nav a[aria-current="page"]::after,
+.navbar a[aria-current="page"]::after {
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 2px;
+    background-color: #d97706;
+    border-radius: 9999px;
+}
+
+/* ── Scroll Reveal Animations ── */
+.reveal-section {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.reveal-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Stagger children inside reveal sections */
+.reveal-section > * {
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.reveal-visible > *:nth-child(1) { transition-delay: 0.05s; opacity: 1; transform: translateY(0); }
+.reveal-visible > *:nth-child(2) { transition-delay: 0.12s; opacity: 1; transform: translateY(0); }
+.reveal-visible > *:nth-child(3) { transition-delay: 0.19s; opacity: 1; transform: translateY(0); }
+.reveal-visible > *:nth-child(4) { transition-delay: 0.26s; opacity: 1; transform: translateY(0); }
+.reveal-visible > *:nth-child(5) { transition-delay: 0.33s; opacity: 1; transform: translateY(0); }
+.reveal-visible > *:nth-child(6) { transition-delay: 0.40s; opacity: 1; transform: translateY(0); }
+
+/* ── Steam/Warmth Animation ── */
+@keyframes steam-rise {
+    0% {
+        opacity: 0;
+        transform: translateY(0) scale(1);
+    }
+    20% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-60px) scale(1.5);
+    }
+}
+
+.steam-particle {
+    position: absolute;
+    width: 6px;
+    height: 12px;
+    background: radial-gradient(ellipse at center, rgba(255,255,255,0.7) 0%, transparent 70%);
+    border-radius: 9999px;
+    animation: steam-rise 3s ease-out infinite;
+}
+
+.steam-particle:nth-child(1) { left: 15%; animation-delay: 0s; }
+.steam-particle:nth-child(2) { left: 35%; animation-delay: 1s; }
+.steam-particle:nth-child(3) { left: 55%; animation-delay: 2s; }
+.steam-particle:nth-child(4) { left: 70%; animation-delay: 0.5s; }
+.steam-particle:nth-child(5) { left: 85%; animation-delay: 1.5s; }
+
+/* ── Parallax helper ── */
+.parallax-bg {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+@media (max-width: 768px) {
+    .parallax-bg {
+        background-attachment: scroll;
+    }
+}
+
+/* ── Pulse CTA button ── */
+@keyframes warm-pulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(217, 119, 6, 0.4); }
+    50% { box-shadow: 0 0 0 10px rgba(217, 119, 6, 0); }
+}
+
+.btn-pulse {
+    animation: warm-pulse 2.5s ease-in-out infinite;
+}
+
+/* ── Decorative underline animation for links ── */
+.underline-warm {
+    position: relative;
+}
+
+.underline-warm::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #d97706;
+    border-radius: 2px;
+    transition: width 0.3s ease;
+}
+
+.underline-warm:hover::after {
+    width: 100%;
+}

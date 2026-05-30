@@ -1,0 +1,23 @@
+FROM docker.io/rust:latest
+
+
+RUN rustup toolchain install stable
+RUN rustup target add wasm32-unknown-unknown
+RUN rustup component add rustfmt
+
+RUN curl -sSL https://dioxus.dev/install.sh | bash
+
+RUN apt update -y
+RUN apt install -y nodejs npm
+
+RUN apt install -y libwebkit2gtk-4.1-dev \
+  build-essential \
+  curl \
+  wget \
+  file \
+  libxdo-dev \
+  libssl-dev \
+  libayatana-appindicator3-dev \
+  librsvg2-dev \
+  lld
+

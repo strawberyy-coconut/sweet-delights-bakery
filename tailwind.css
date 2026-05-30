@@ -1,0 +1,65 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+/* ── Custom Color Palette ── */
+@theme {
+    --color-cream-50: #f5e6d3;      /* warm beige — visibly not white */
+    --color-cream-100: #ecd9c0;     /* deeper beige — warm parchment */
+    --color-cream-200: #e2c8a8;     /* warm tan */
+    --color-cream-300: #d4b896;     /* muted tan */
+
+    --color-honey-50: #fffbeb;
+    --color-honey-100: #fef3c7;
+    --color-honey-200: #fde68a;
+    --color-honey-300: #fcd34d;
+    --color-honey-400: #fbbf24;
+    --color-honey-500: #f59e0b;
+    --color-honey-600: #d97706;
+
+    --color-caramel-50: #fff7ed;
+    --color-caramel-100: #ffedd5;
+    --color-caramel-200: #fed7aa;
+    --color-caramel-500: #c2410c;
+    --color-caramel-600: #9a3412;
+    --color-caramel-700: #7c2d12;
+
+    --color-butter-50: #fefce8;
+    --color-butter-100: #fef9c3;
+}
+
+/*
+  ── DaisyUI "bakery" theme — warm, inviting, homemade feel ──
+*/
+[data-theme="bakery"] {
+    --color-primary: #d97706;         /* honey-600 — warm golden amber */
+    --color-primary-content: #fffbeb;
+    --color-secondary: #57534e;       /* stone-600 — warm taupe */
+    --color-secondary-content: #f5f5f4;
+    --color-accent: #f59e0b;          /* honey-500 — bright warm honey */
+    --color-accent-content: #292524;
+    --color-neutral: #44403c;         /* stone-700 — warm deep text */
+    --color-neutral-content: #e7e5e4;
+    --color-base-100: #f5e6d3;        /* cream-50 — warm beige */
+    --color-base-200: #ecd9c0;        /* cream-100 — warm beige */
+    --color-base-300: #efe0c0;        /* cream-200 — warm parchment */
+    --color-base-content: #44403c;    /* stone-700 — warm readable text */
+    --color-info: #2563eb;
+    --color-info-content: #eff6ff;
+    --color-success: #16a34a;
+    --color-success-content: #f0fdf4;
+    --color-warning: #d97706;
+    --color-warning-content: #fffbeb;
+    --color-error: #dc2626;
+    --color-error-content: #fef2f2;
+    --radius-box: 1rem;
+    --radius-field: 9999px;
+    --radius-selector: 0.75rem;
+    --radius-tab: 0.5rem;
+}
+
+html, body, #main {
+    min-height: 100vh;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}

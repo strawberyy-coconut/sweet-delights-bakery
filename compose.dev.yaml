@@ -1,0 +1,13 @@
+services:
+  dev:
+    build:
+      context: .
+      dockerfile: Containerfile.dev
+    env_file:
+      - .dev.env
+    volumes:
+      - grtv-shared:/grtv-shared
+    network_mode: host
+    
+volumes:
+  grtv-shared:
